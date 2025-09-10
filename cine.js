@@ -39,43 +39,7 @@ const peliculas = [
     { nombre: "10 cosas que odio de ti", genero: "Romance", año: 1999 }
 ];
 
-const contenedor = document.getElementById(`contenedor`);
-const botonbuscador = document.getElementById(`boton`);
-
-botonbuscador.addEventListener('click', function () {
-    const filtro = document.getElementById('propiedad').value;
-    const buscador = document.getElementById(`buscador`).value.toLowerCase();
-    // const texto = buscador.value.toLowerCase();
-
-    let resultados = peliculas;
-
-    if (filtro !== "todos" && buscador) {
-        resultados = peliculas.filter(pelicula =>
-            pelicula[filtro] && pelicula[filtro].toLowerCase().includes(buscador)
-        );
-    } else if (filtro !== "todos") {
-        resultados = peliculas.filter(pelicula =>
-            pelicula[filtro]
-        );
-    } else if (buscador) {
-        peliculas.filter(pelicula =>
-            pelicula.nombre.toLowerCase().includes(buscador) ||
-            pelicula.genero.toLowerCase().includes(buscador) ||
-            pelicula.año.toString().includes(buscador)
-        )
-    }
-
-    funcionFiltrar(resultados);
-});
-
-function funcionFiltrar(lista) {
-    if (lista.innerHTML !== "") {
-        lista.innerHTML = ""
-    } else {
-      contenedor.innerHTML = "<p>No se encontraron películas.</p>";
-    }
-
-    // creo contenedor 
+// creo contenedor 
     let contenedor1 = document.getElementById("contenedor1")
     contenedor1.classList.add("row")
 
@@ -201,4 +165,43 @@ function funcionFiltrar(lista) {
     cardBody4.appendChild(parrafo4)
 
     contenedor1.append(col1, col2, col3, col4)
+const contenedor = document.getElementById(`contenedor`);
+const botonbuscador = document.getElementById(`boton`);
+
+botonbuscador.addEventListener('click', function () {
+    const filtro = document.getElementById('propiedad').value;
+    const buscador = document.getElementById(`buscador`).value.toLowerCase();
+    // const texto = buscador.value.toLowerCase();
+
+    let resultados = peliculas;
+
+    if (filtro !== "todos" && buscador) {
+        resultados = peliculas.filter(pelicula =>
+            pelicula[filtro] && pelicula[filtro].toLowerCase().includes(buscador)
+        );
+    } else if (filtro !== "todos") {
+        resultados = peliculas.filter(pelicula =>
+            pelicula[filtro]
+        );
+    } else if (buscador) {
+        peliculas.filter(pelicula =>
+            pelicula.nombre.toLowerCase().includes(buscador) ||
+            pelicula.genero.toLowerCase().includes(buscador) ||
+            pelicula.año.toString().includes(buscador)
+        )
+    }
+
+    funcionFiltrar(resultados);
+});
+
+function funcionFiltrar(lista) {
+    if (lista.innerHTML !== "") {
+        lista.innerHTML = []
+    } else {
+      contenedor.innerHTML = "<p>No se encontraron películas.</p>";
+    }
+
+    lista.forEach(pelicula => {
+        
+    });
 }
