@@ -4,32 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>CINEPERRIS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
     <!--CINE-->
-    <!--boton de comprar entrada -->
-    <button id="comprar">COMPRAR ENTRADAS</button>
-    <button id="cancelar"></button>
-    <button id="imprimir">IMPRIMI TICKETS AQUI</button>
-    <!--boton de cancelar-->
-    <!--imagenes de la pelicula-->
-    
-    <!--card de la pelicula-->
-    <div id="contenedor1"></div>
+    <!--navegador-->
+    <div class="container mt-3 mb-3">
+        <div class="row">
+            <div class="col-md-4">
+                <select name="" class="form-control" id="propiedad">
+                    <option value="todos">Todos las películas</option>
+                    <option value="nombre">Nombre</option>
+                    <option value="marca">Género</option>
+                    <option value="precio">Formato</option>
+                </select>
+            </div>
+            <div class="col-md-5">
+                <input type="text" name="buscador" id="buscador" class="form-control" placeholder="Busca la pelicula">
 
-    <script src="cine.js"></script>
+            </div>
+            <div class="col-md-3">
+                <button onclick="funcionFiltrar()" class="btn btn-danger">Buscar</button>
+            </div>
+        </div>
 
-    <!--footer-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+        <!--boton de comprar entrada -->
+        <button id="comprar">COMPRAR ENTRADAS</button>
+        <button id="cancelar"></button>
+        <button id="imprimir">IMPRIMI TICKETS AQUI</button>
+        <!--boton de cancelar-->
+        <!--imagenes de la pelicula-->
+
+        <!--card de la pelicula-->
+        <div id="contenedor1"></div>
+
+        <script src="cine.js"></script>
+
+        <!--footer-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -1,11 +1,11 @@
 let icono = document.createElement("i")
 //boton comprar abajo
-const boton = document.getElementById('comprar');
-boton.addEventListener('click', function() {
+const botoncomprar = document.getElementById('comprar');
+botoncomprar.addEventListener('click', function () {
     alert('Entrada comprada');
 });
-boton.classList.add("btn");
-boton.classList.add("btn-danger");
+botoncomprar.classList.add("btn");
+botoncomprar.classList.add("btn-danger");
 
 //boton comprar arriba
 //boton cancelar abajo
@@ -19,15 +19,15 @@ boton2.classList.add("border-dark");
 icono.classList.add("bi")
 icono.classList.add("bi-x-octagon-fill")
 boton2.appendChild(icono);
-boton2.addEventListener('click', function() {
+boton2.addEventListener('click', function () {
     alert('Compra cancelada');
 });
 //boton cancelar arriba
 //boton imprimir abajo
-const boton3 = document.getElementById('imprimir'); 
+const boton3 = document.getElementById('imprimir');
 boton3.classList.add("btn");
 boton3.classList.add("btn-success");
-boton3.addEventListener('click', function() {
+boton3.addEventListener('click', function () {
     alert('los tickets se estan imprimiendo');
 });
 //boton imprimir arriba
@@ -156,4 +156,56 @@ parrafo4.classList.add("card-text")
 parrafo4.textContent = "Las hermanas Stratford son muy distintas. La bella y popular Bianca nunca ha salido con un chico, pero lo está deseando, y Kat, su hermana mayor, es arisca y con mal genio. Su padre no deja que Bianca tenga novio hasta que Kat consiga uno."
 cardBody4.appendChild(parrafo4)
 
-contenedor1.append(col1,col2,col3,col4)
+contenedor1.append(col1, col2, col3, col4)
+const peliculas = [
+    { nombre: "El conjuro", genero: "Terror", año: 2013 },
+    { nombre: "Cars 2", genero: "Infantil", año: 2012 },
+    { nombre: "Nahir", genero: "Documental", año: 2024 },
+    { nombre: "10 cosas que odio de ti", genero: "Romance", año: 1999 }
+];
+
+const select = document.getElementById('propiedad');
+const contenedor = document.getElementById(`contenedor`);
+const botonbuscador = document.getElementById(`boton`);
+const buscador = document.getElementById(`buscador`)
+
+botonbuscador.addEventListener('click', function () {
+    const filtro = select.value;
+    const texto = buscador.value.toLowerCase();
+
+    let resultados = peliculas;
+
+    if (filtro !== "todos" && texto) {
+        resultados = peliculas.filter(pelicula =>
+            pelicula[filtro] && pelicula[filtro].toLowerCase().includes(texto)
+        );
+    } else if (filtro !== "todos") {
+        resultados = peliculas.filter(pelicula =>
+            pelicula[filtro]
+        );
+    } else if (texto) {
+        peliculas.filter(pelicula =>
+            pelicula.nombre.toLowerCase().includes(texto) ||
+            pelicula.genero.toLowerCase().includes(texto) ||
+            pelicula.año.toString().includes(texto)
+        )
+    }
+
+    mostrarPeliculas(resultados);
+});
+
+function mostrarPeliculas(lista) {
+    if (lista.length === 0) {
+        contenedor.innerHTML = "<p>No se encontraron películas.</p>";
+        return;
+    }
+    contenedor.innerHTML = lista.map(pelicula =>
+        <div class="card mb-2">
+            <div class="card-body">
+                <h5 class="card-title">${pelicula.nombre}</h5>
+                <p class="card-text">Género: ${pelicula.genero} | Formato: ${pelicula.formato} | Año: ${pelicula.año}</p>
+
+            </div>
+        </div>
+    )
+}
