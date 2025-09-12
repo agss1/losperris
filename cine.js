@@ -35,7 +35,7 @@ boton3.addEventListener('click', function () {
 let contenedor1 = document.getElementById("contenedor1")
 contenedor1.classList.add("row")
 //CREO CLASE
-class pelicula {
+class Pelicula {
     constructor(nombre, genero, descripción) {
         this.nombre = nombre;
         this.genero = genero;
@@ -43,11 +43,11 @@ class pelicula {
     }
 
 }
-
+// CREE LA LISTA DE PELICULAS
 let listDepeliculas = [
-    new pelicula(1, "El conjuro", "terror", "narra una historia basada en hechos reales sobre los demonólogos Ed y Lorraine Warren."),
-    new pelicula(2, "Cars 2", "infantil", "El Rayo McQueen y su amigo Mate viajan al extranjero para competir en el primer Gran Prix Mundial, un torneo internacional que busca al auto más rápido del mundo"),
-    new pelicula(3,"Nahir el documental", "Drama policial", "El filme está basado en un caso policial real que tuvo una gran cobertura mediática en Argentina" ),
+    new Pelicula(1, "El conjuro", "terror", "narra una historia basada en hechos reales sobre los demonólogos Ed y Lorraine Warren."),
+    new Pelicula(2, "Cars 2", "infantil", "El Rayo McQueen y su amigo Mate viajan al extranjero para competir en el primer Gran Prix Mundial, un torneo internacional que busca al auto más rápido del mundo"),
+    new Pelicula(3,"Nahir el documental", "Drama policial", "El filme está basado en un caso policial real que tuvo una gran cobertura mediática en Argentina" ),
 ]
 
 
