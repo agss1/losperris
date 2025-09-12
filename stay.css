@@ -1,0 +1,20 @@
+/*COLOR DE FONDO*/
+body {
+    background-color: black;
+}
+/*color de boton */
+.botoncomprar {
+    background-color: red;
+    color: white
+}
+/*cambia el color a las letras*/
+.tarjeta{
+    color: white;
+}
+.card-body{
+    color:rgb(255, 255, 255)
+}
+/* Aplica fondo negro a las tarjetas */
+.card, .card2, .card3, .tarjeta {
+    background-color: #000000;
+}
