@@ -39,45 +39,25 @@ const peliculas = [
     { nombre: "10 cosas que odio de ti", genero: "Romance", año: 1999 }
 ];
 
-const contenedor = document.getElementById(`contenedor`);
-const botonbuscador = document.getElementById(`boton`);
-
-botonbuscador.addEventListener('click', function () {
-    const filtro = document.getElementById('propiedad').value;
-    const buscador = document.getElementById(`buscador`).value.toLowerCase();
-    // const texto = buscador.value.toLowerCase();
-
-    let resultados = peliculas;
-
-    if (filtro !== "todos" && buscador) {
-        resultados = peliculas.filter(pelicula =>
-            pelicula[filtro] && pelicula[filtro].toLowerCase().includes(buscador)
-        );
-    } else if (filtro !== "todos") {
-        resultados = peliculas.filter(pelicula =>
-            pelicula[filtro]
-        );
-    } else if (buscador) {
-        peliculas.filter(pelicula =>
-            pelicula.nombre.toLowerCase().includes(buscador) ||
-            pelicula.genero.toLowerCase().includes(buscador) ||
-            pelicula.año.toString().includes(buscador)
-        )
+// creo contenedor 
+let contenedor1 = document.getElementById("contenedor1")
+contenedor1.classList.add("row")
+//CREO CLASE
+class Pelicula {
+    constructor(nombre, genero, descripción) {
+        this.nombre = nombre;
+        this.genero = genero;
+        this.descripción = descripción;
     }
 
-    funcionFiltrar(resultados);
-});
+}
+// CREE LA LISTA DE PELICULAS
+let listDepeliculas = [
+    new Pelicula(1, "El conjuro", "terror", "narra una historia basada en hechos reales sobre los demonólogos Ed y Lorraine Warren."),
+    new Pelicula(2, "Cars 2", "infantil", "El Rayo McQueen y su amigo Mate viajan al extranjero para competir en el primer Gran Prix Mundial, un torneo internacional que busca al auto más rápido del mundo"),
+    new Pelicula(3,"Nahir el documental", "Drama policial", "El filme está basado en un caso policial real que tuvo una gran cobertura mediática en Argentina" ),
+]
 
-function funcionFiltrar(lista) {
-    if (lista.innerHTML !== "") {
-        lista.innerHTML = ""
-    } else {
-      contenedor.innerHTML = "<p>No se encontraron películas.</p>";
-    }
-
-    // creo contenedor 
-    let contenedor1 = document.getElementById("contenedor1")
-    contenedor1.classList.add("row")
 
 
     // creo la card1 
@@ -201,4 +181,43 @@ function funcionFiltrar(lista) {
     cardBody4.appendChild(parrafo4)
 
     contenedor1.append(col1, col2, col3, col4)
+const contenedor = document.getElementById(`contenedor`);
+const botonbuscador = document.getElementById(`boton`);
+
+botonbuscador.addEventListener('click', function () {
+    const filtro = document.getElementById('propiedad').value;
+    const buscador = document.getElementById(`buscador`).value.toLowerCase();
+    // const texto = buscador.value.toLowerCase();
+
+    let resultados = peliculas;
+
+    if (filtro !== "todos" && buscador) {
+        resultados = peliculas.filter(pelicula =>
+            pelicula[filtro] && pelicula[filtro].toLowerCase().includes(buscador)
+        );
+    } else if (filtro !== "todos") {
+        resultados = peliculas.filter(pelicula =>
+            pelicula[filtro]
+        );
+    } else if (buscador) {
+        peliculas.filter(pelicula =>
+            pelicula.nombre.toLowerCase().includes(buscador) ||
+            pelicula.genero.toLowerCase().includes(buscador) ||
+            pelicula.año.toString().includes(buscador)
+        )
+    }
+
+    funcionFiltrar(resultados);
+});
+
+function funcionFiltrar(lista) {
+    if (lista.innerHTML !== "") {
+        lista.innerHTML = []
+    } else {
+      contenedor.innerHTML = "<p>No se encontraron películas.</p>";
+    }
+
+    lista.forEach(pelicula => {
+        
+    });
 }
