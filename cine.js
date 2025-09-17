@@ -1,11 +1,13 @@
 let icono = document.createElement("i")
 //boton comprar abajo
-const botoncomprar = document.getElementById('comprar');
-botoncomprar.addEventListener('click', function () {
-    alert('Entrada comprada');
-});
-botoncomprar.classList.add("btn");
-botoncomprar.classList.add("botoncomprar");
+//const botoncomprar = document.getElementById('comprar');
+//botoncomprar.addEventListener('click', function () {
+//    alert('Entrada comprada');
+//});
+//botoncomprar.classList.add("btn");
+//botoncomprar.classList.add("botoncomprar"); 
+// el boton de comprar lo puse en cada card, pero use la referencia de como lo hizo colipi
+
 
 //boton comprar arriba
 //boton cancelar abajo
@@ -86,6 +88,14 @@ let parrafo1 = document.createElement("p")
 parrafo1.classList.add("card-text")
 parrafo1.textContent = "A principios de los años 70, Ed y Lorrain Warren, reputados investigadores de fenómenos paranormales, se enfrentan a una entidad demoníaca al intentar ayudar a una familia que está siendo aterrorizada por una presencia oscura en su aislada granja."
 cardbody.appendChild(parrafo1)
+//boton para comprar 
+let botonComprar1 = document.createElement("button");
+botonComprar1.textContent = "Comprar entrada";
+botonComprar1.classList.add("btn", "botoncomprar", "mt-2");
+botonComprar1.addEventListener('click', function () {
+    alert('Entrada comprada para "El conjuro"');
+});
+cardbody.appendChild(botonComprar1);
 //CARD 2 
 //creo contenddor 
 let col2 = document.createElement("div")
@@ -108,7 +118,7 @@ card2.appendChild(cardBody2)
 
 //creamos el titulo
 let titulo2 = document.createElement("h5")
-titulo2.classList.add("card-titt")
+titulo2.classList.add("card-tittle")
 titulo2.textContent = "Cars 2"
 cardBody2.appendChild(titulo2)
 // parrafo = p5
@@ -116,6 +126,14 @@ let parrafo2 = document.createElement("p")
 parrafo2.classList.add("card-text")
 parrafo2.textContent = "El Rayo McQueen y Mate viajan a Japón para participar en una carrera patrocinada por los fabricantes de un tipo de combustible ecológico. Sin embargo, unos villanos pretenden que el nuevo producto fracase."
 cardBody2.appendChild(parrafo2)
+//boton para comprar
+let botonComprar2 = document.createElement("button");
+botonComprar2.textContent = "Comprar entrada";
+botonComprar2.classList.add("btn", "botoncomprar", "mt-2");
+botonComprar2.addEventListener('click', function () {
+    alert('Entrada comprada para "Cars 2"');
+});
+cardBody2.appendChild(botonComprar2);
 //card3
 //creo contenedor  
 let col3 = document.createElement("div")
@@ -138,7 +156,7 @@ card3.appendChild(cardBody3)
 
 //creamos el titulo
 let titulo3 = document.createElement("h5")
-titulo3.classList.add("card-titt")
+titulo3.classList.add("card-tittle")
 titulo3.textContent = "Nahir el documental"
 cardBody3.appendChild(titulo3)
 // parrafo = p5
@@ -146,6 +164,14 @@ let parrafo3 = document.createElement("p")
 parrafo3.classList.add("card-text")
 parrafo3.textContent = "En 2018, Nahir Galarza, de 19 años, fue condenada a cadena perpetua por haber asesinado a su novio, Fernando Pastorizzo. La situación se complica cuando acusa a su padre, un agente de policía, de ser el autor del homicidio."
 cardBody3.appendChild(parrafo3)
+//boton para comprar
+let botonComprar3 = document.createElement("button");
+botonComprar3.textContent = "Comprar entrada";
+botonComprar3.classList.add("btn", "botoncomprar", "mt-2");
+botonComprar3.addEventListener('click', function () {
+    alert('Entrada comprada para "Nahir el documental"');
+});
+cardBody3.appendChild(botonComprar3);
 //CARD 4
 // crear contenedor 
 let col4 = document.createElement("div")
@@ -166,6 +192,7 @@ col4.appendChild(card4)
 let cardBody4 = document.createElement("div")
 cardBody4.classList.add("card-body")
 card4.appendChild(cardBody4)
+
 //creamos el tutulo
 let titulo4 = document.createElement("h5")
 titulo4.classList.add("card-titt")
@@ -176,6 +203,14 @@ let parrafo4 = document.createElement("p")
 parrafo4.classList.add("card-text")
 parrafo4.textContent = "Las hermanas Stratford son muy distintas. La bella y popular Bianca nunca ha salido con un chico, pero lo está deseando, y Kat, su hermana mayor, es arisca y con mal genio. Su padre no deja que Bianca tenga novio hasta que Kat consiga uno."
 cardBody4.appendChild(parrafo4)
+//boton para comprar
+let botonComprar4 = document.createElement("button");
+botonComprar4.textContent = "Comprar entrada";
+botonComprar4.classList.add("btn", "botoncomprar", "mt-2");
+botonComprar4.addEventListener('click', function () {
+    alert('Entrada comprada para "10 cosas que odio de ti"');
+});
+cardBody4.appendChild(botonComprar4);
 
 contenedor1.append(col1, col2, col3, col4)
 //filtro
@@ -241,6 +276,15 @@ function funcionFiltrar(lista) {
         let descripcion = document.createElement("p");
         descripcion.textContent = pelicula.descripcion;
         cardBody.appendChild(descripcion);
+
+        // boton comprar entrada
+        let botonComprar = document.createElement("button");
+        botonComprar.textContent = "Comprar entrada";
+        botonComprar.classList.add("btn", "botoncomprar", "mt-2");
+        botonComprar.addEventListener('click', function () {
+            alert(`Entrada comprada para "${pelicula.nombre}"`);
+        });
+        cardBody.appendChild(botonComprar);
 
         contenedor1.appendChild(card);
     });

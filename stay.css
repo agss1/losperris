@@ -18,3 +18,46 @@ body {
 .card, .card2, .card3, .tarjeta {
     background-color: #000000;
 }
+/* letras blancas */
+.card p,
+.card-body p,
+.card-body2 p,
+.card-body3 p,
+.tarjeta p {
+    color: white;
+}
+/* titulos blancos */
+.card h5,
+.card-body h5,
+.card-body2 h5,
+.card-body3 h5,
+.tarjeta h5 {
+    color: white;
+}
+#cancelar, #imprimir {
+    display: none;
+}
+/*color del footer*/
+footer,
+footer * {
+    color: #fff !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -webkit-text-fill-color: #fff !important;
+}
+footer a,
+footer a:visited,
+footer a:active,
+footer .link-dark,
+footer .text-muted,
+footer .nav-link {
+    color: #fff !important;
+    text-decoration: underline;
+}
+footer {
+    border-top: 4px solid #888 !important;
+    margin-top: 40px; 
+}
+h2 {
+    color: white !important;
+}
