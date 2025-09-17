@@ -6,11 +6,13 @@ let icono = document.createElement("i")
 //});
 //botoncomprar.classList.add("btn");
 //botoncomprar.classList.add("botoncomprar"); 
+
+
 // el boton de comprar lo puse en cada card, pero use la referencia de como lo hizo colipi
 
 
 //boton comprar arriba
-//boton cancelar abajo
+//boton cancelar 
 const boton2 = document.getElementById('cancelar');
 
 
